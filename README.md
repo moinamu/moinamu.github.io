@@ -76,10 +76,10 @@ GitHub website mein:
 
 ## First-time GitHub Pages publish
 
-1. GitHub par public repository banayein: `moin.github.io`.
+1. GitHub par public repository banayein: `moinamu.github.io`.
 2. Is project folder ke andar ki sari files upload karein: `index.html`, other HTML pages aur `assets` folder.
 3. Repository mein **Settings -> Pages** kholein.
 4. **Deploy from a branch**, branch `main`, folder `/(root)` select karke Save karein.
-5. Website link hoga: `https://moinamu.github.io/moin.github.io/`
+5. Website link hoga: `https://moinamu.github.io`
 
 Yahi link LinkedIn, WhatsApp, ResearchGate, Google Scholar aur other social media profiles mein paste kiya ja sakta hai.
