@@ -74,6 +74,36 @@ GitHub website mein:
 3. Photo ya PDF replace karna ho to `assets/images` ya `assets` folder open karein, **Add file -> Upload files** select karein, new file upload karein aur **Commit changes** click karein.
 4. GitHub Pages 1-3 minutes mein updated site publish kar dega.
 
+## PowerShell se GitHub par website push karna
+
+Pehli baar upload ke liye PowerShell open karke yeh commands one-by-one run karein:
+
+```powershell
+cd "C:\Users\moin.uddin\Downloads\moinuddin.github.io"
+git credential-manager github login
+```
+
+Second command ke baad browser open hoga. GitHub account `moinamu` se sign in karke authorize karein. Browser authorization complete ho jaye to PowerShell mein yeh command run karein:
+
+```powershell
+git push -u origin main
+```
+
+Note: Website files GitHub par upload karne ke liye `git push` use hota hai. `git pull` GitHub se files computer par download karne ke liye hota hai.
+
+## Future website updates PowerShell se
+
+Kisi file ko change karne ke baad yeh commands run karein:
+
+```powershell
+cd "C:\Users\moin.uddin\Downloads\moinuddin.github.io"
+git add .
+git commit -m "Update website"
+git push
+```
+
+`git push` successful hone ke 1-3 minutes baad GitHub Pages par update live ho jayega.
+
 ## First-time GitHub Pages publish
 
 1. GitHub par public repository banayein: `moinamu.github.io`.
