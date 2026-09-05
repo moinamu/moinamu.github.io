@@ -1,25 +1,25 @@
 # Dr. Moin Uddin - Academic Website
 
-Yeh aapki static GitHub Pages website hai. Isme koi software install karne ki zarurat nahi hai. Aap files edit karke GitHub par upload/commit karenge aur site update ho jayegi.
+This is a static academic website hosted with GitHub Pages. No software framework or website builder is required. Update the files, commit the changes, and push them to GitHub.
 
-## Kis change ke liye kaunsi file?
+## Which file should I edit?
 
-| Agar aapko yeh change karna ho | Yeh file edit karein |
+| Change | File to edit |
 | --- | --- |
-| New paper add, old paper edit/remove | `assets/data.js` |
-| Name, About Me, research interests, emails, profile links | `index.html` |
+| Add, edit, or remove a publication | `assets/data.js` |
+| Name, About Me, research interests, emails, and profile links | `index.html` |
 | Education page | `education.html` |
-| Teaching aur CV page | `teaching.html` |
-| Profile photo | `assets/images/moin-uddin.png` |
+| Teaching and CV page | `teaching.html` |
+| Profile photograph | `assets/images/moin-uddin.png` |
 | CV PDF | `assets/Moin-Uddin-CV.pdf` |
-| Colour, spacing, photo/card size, layout | `assets/enhancements.css` |
+| Colours, spacing, photograph/card size, and layout | `assets/enhancements.css` |
 
-## New publication add karna
+## Add a new publication
 
-1. `assets/data.js` open karein.
-2. `const publications = [` ke andar existing paper ki ek complete line copy karein.
-3. Naya paper list ke bilkul top par paste karein, aur details edit karein.
-4. Har paper ke end mein comma `,` hona chahiye.
+1. Open `assets/data.js`.
+2. Copy one complete publication item inside `const publications = [`.
+3. Paste the new item at the top of the list and update its details.
+4. Add a comma `,` at the end of each item.
 
 Example:
 
@@ -27,73 +27,71 @@ Example:
 { year: "2026", title: "Paper title", authors: "Author 1, Moin Uddin and Author 3", journal: "Journal Name, volume, pages", url: "https://doi.org/your-doi" },
 ```
 
-Paper ka title aur DOI dono clickable ho jayenge. DOI/online link nahi ho to `url: ""` likhein.
+The publication title and DOI will become clickable automatically. If there is no DOI or online link, use `url: ""`.
 
-Important: `journal` ke baad comma zaroor lagayein. JavaScript syntax error hone par publications page blank ho sakta hai.
+Important: include a comma after the `journal` field. A JavaScript syntax error can prevent all publications from appearing.
 
-## News automatic kaise update hoti hai
+## Automatic News updates
 
-- Naya paper `publications` list mein add karte hi Home page ke News section mein aa sakta hai.
-- Current year ke papers hi News mein dikhte hain.
-- Current job position `currentPosition` block mein update karein.
+- New publications in the `publications` list can appear automatically in the News section on the Home page.
+- Only publications from the current calendar year appear in News.
+- Update the `currentPosition` block in `assets/data.js` when your current position changes.
 
-## Profile photo replace karna
+## Replace the profile photograph
 
-1. New photo ko `assets/images` folder mein rakhein.
-2. Existing file ka naam same rakhein: `moin-uddin.png`.
-3. Old file ko replace karein.
+1. Place your new photograph in `assets/images`.
+2. Name it exactly `moin-uddin.png`.
+3. Replace the existing file.
 
-Photo change ke baad browser mein `Ctrl + F5` press karein, taki purani cached photo na dikhe.
+After replacing the image, press `Ctrl + F5` in your browser to bypass any cached version.
 
-## CV PDF update karna
+## Update the CV PDF
 
-1. Latest CV ko PDF mein export karein.
-2. PDF ka naam exact yeh rakhein: `Moin-Uddin-CV.pdf`.
-3. Is file ko `assets` folder mein existing PDF ki jagah replace karein.
+1. Export your latest CV as a PDF.
+2. Name the file exactly `Moin-Uddin-CV.pdf`.
+3. Replace the existing PDF in the `assets` folder.
 
-Download CV button automatically isi file ko download karega. HTML file edit karne ki zarurat nahi hai.
+The Download CV button will automatically download this file; no HTML changes are required.
 
-## About Me, email ya links change karna
+## Update text, contact details, and profile links
 
-`index.html` open karein aur required text change karein.
+Open `index.html` and edit the required text.
 
-- About Me: `id="research"` section
-- Email: `id="contact"` section
-- Google Scholar, ORCID, Scopus, ResearchGate links: Contact section mein
+- About Me: the section with `id="research"`
+- Email addresses: the section with `id="contact"`
+- Google Scholar, ORCID, Scopus, and ResearchGate links: the Contact section
 
-## Layout ya colour change karna
+## Change the layout or colours
 
-`assets/enhancements.css` edit karein. Is file mein photo size, hero box, gaps, fonts aur card styles hain.
+Edit `assets/enhancements.css`. This file controls the photograph size, hero card, gaps, typography, colours, and other visual styles.
 
-## GitHub par update upload/commit karna
+## Upload updates using the GitHub website
 
-GitHub website mein:
+1. Open your GitHub repository.
+2. To change a text file, open it, select the pencil icon, edit it, and choose **Commit changes**.
+3. To replace a photograph or PDF, open `assets/images` or `assets`, select **Add file -> Upload files**, upload the new file, and choose **Commit changes**.
+4. GitHub Pages normally publishes the update within 1-3 minutes.
 
-1. Apna repository open karein.
-2. Kisi text file ko change karna ho to file open karein, pencil icon click karein, edit karein, phir **Commit changes** click karein.
-3. Photo ya PDF replace karna ho to `assets/images` ya `assets` folder open karein, **Add file -> Upload files** select karein, new file upload karein aur **Commit changes** click karein.
-4. GitHub Pages 1-3 minutes mein updated site publish kar dega.
+## Push the website from PowerShell
 
-## PowerShell se GitHub par website push karna
-
-Pehli baar upload ke liye PowerShell open karke yeh commands one-by-one run karein:
+For the first upload, open PowerShell and run these commands one at a time:
 
 ```powershell
 cd "C:\Users\moin.uddin\Downloads\moinuddin.github.io"
 git credential-manager github login
 ```
 
-Second command ke baad browser open hoga. GitHub account `moinamu` se sign in karke authorize karein. Browser authorization complete ho jaye to PowerShell mein yeh command run karein:
+Your browser will open. Sign in to the `moinamu` GitHub account and approve the request. After authorization, run:
 
 ```powershell
 git push -u origin main
 ```
 
-Note: Website files GitHub par upload karne ke liye `git push` use hota hai. `git pull` GitHub se files computer par download karne ke liye hota hai.
+Use `git push` to upload local website files to GitHub. Use `git pull` only to download changes from GitHub to your computer.
 
-## Future website updates PowerShell se
+## Publish future changes from PowerShell
 
-Kisi file ko change karne ke baad yeh commands run karein:
+After editing any website file, run:
 
 ```powershell
 cd "C:\Users\moin.uddin\Downloads\moinuddin.github.io"
@@ -102,14 +100,14 @@ git commit -m "Update website"
 git push
 ```
 
-`git push` successful hone ke 1-3 minutes baad GitHub Pages par update live ho jayega.
+The update should be live on GitHub Pages within 1-3 minutes.
 
-## First-time GitHub Pages publish
+## Enable GitHub Pages for the first time
 
-1. GitHub par public repository banayein: `moinamu.github.io`.
-2. Is project folder ke andar ki sari files upload karein: `index.html`, other HTML pages aur `assets` folder.
-3. Repository mein **Settings -> Pages** kholein.
-4. **Deploy from a branch**, branch `main`, folder `/(root)` select karke Save karein.
-5. Website link hoga: `https://moinamu.github.io`
+1. Create a public GitHub repository named `moinamu.github.io`.
+2. Upload or push all project files, including `index.html`, the other HTML pages, and the `assets` folder.
+3. In the repository, open **Settings -> Pages**.
+4. Under Build and deployment, choose **Deploy from a branch**, select the `main` branch and the `/(root)` folder, and save.
+5. The website will be available at: `https://moinamu.github.io`
 
-Yahi link LinkedIn, WhatsApp, ResearchGate, Google Scholar aur other social media profiles mein paste kiya ja sakta hai.
+Share this link on LinkedIn, WhatsApp, ResearchGate, Google Scholar, and other social-media profiles.
