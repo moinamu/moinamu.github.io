@@ -4,33 +4,33 @@
 
 ## The common problem
 
-Let \(H\) be a real Hilbert space, \(A:H\rightrightarrows H\) a maximal monotone operator, and \(B:H\to H\) a monotone, \(L\)-Lipschitz continuous operator. We seek \(x^\star\) such that
-\[
+Let $H$ be a real Hilbert space, $A:H\rightrightarrows H$ a maximal monotone operator, and $B:H\to H$ a monotone, $L$-Lipschitz continuous operator. We seek $x^\star$ such that
+$$
 0\in A(x^\star)+B(x^\star).
-\]
-Assume the solution set is nonempty. For a stepsize \(\lambda>0\), the resolvent is \(J_{\lambda A}=(I+\lambda A)^{-1}\). For example, when \(A=N_C\) for a closed convex set \(C\), this resolvent is the metric projection \(P_C\).
+$$
+Assume the solution set is nonempty. For a stepsize $\lambda>0$, the resolvent is $J_{\lambda A}=(I+\lambda A)^{-1}$. For example, when $A=N_C$ for a closed convex set $C$, this resolvent is the metric projection $P_C$.
 
 The two classical updates below have different per-iteration costs. The displayed formulas are baseline methods, not a new algorithm or a claim about an unpublished manuscript.
 
 ## Forward–backward–forward (FBF)
 
-Tseng's correction evaluates the forward operator at both \(x_k\) and an intermediate point:
-\[
+Tseng's correction evaluates the forward operator at both $x_k$ and an intermediate point:
+$$
 y_k=J_{\lambda A}(x_k-\lambda B(x_k)),\qquad
 x_{k+1}=y_k-\lambda\bigl(B(y_k)-B(x_k)\bigr).
-\]
-With the usual global monotonicity and Lipschitz assumptions, a standard constant-step regime is \(0<\lambda<1/L\). The important cost is **two evaluations of \(B\)** and **one resolvent evaluation** per iteration.
+$$
+With the usual global monotonicity and Lipschitz assumptions, a standard constant-step regime is $0<\lambda<1/L$. The important cost is **two evaluations of $B$** and **one resolvent evaluation** per iteration.
 
 ## Forward–reflected–backward (FRB)
 
 Malitsky and Tam use a stored operator value from the previous iterate:
-\[
+$$
 x_{k+1}
  =J_{\lambda A}\!\left(x_k-\lambda\bigl(2B(x_k)-B(x_{k-1})\bigr)\right).
-\]
-A standard constant-step regime is \(0<\lambda<1/(2L)\). After initialization and with \(B(x_{k-1})\) stored, each iteration needs **one new evaluation of \(B\)** and **one resolvent evaluation**. These counts concern the baseline constant-step schemes; backtracking can add evaluations.
+$$
+A standard constant-step regime is $0<\lambda<1/(2L)$. After initialization and with $B(x_{k-1})$ stored, each iteration needs **one new evaluation of $B$** and **one resolvent evaluation**. These counts concern the baseline constant-step schemes; backtracking can add evaluations.
 
-| Method | New \(B\) evaluations per iteration | Resolvent evaluations | Main idea |
+| Method | New $B$ evaluations per iteration | Resolvent evaluations | Main idea |
 | --- | ---: | ---: | --- |
 | Tseng FBF | 2 | 1 | Correct at the intermediate point |
 | Malitsky–Tam FRB | 1 after initialization | 1 | Reuse the previous forward value |
@@ -38,7 +38,7 @@ A standard constant-step regime is \(0<\lambda<1/(2L)\). After initialization an
 ## Reporting a fair numerical comparison
 
 1. State the stopping residual explicitly and apply the same tolerance to every method.
-2. Count **actual** evaluations of \(B\), resolvents, projections, and backtracking trials, including initialization.
+2. Count **actual** evaluations of $B$, resolvents, projections, and backtracking trials, including initialization.
 3. Report wall-clock time alongside operator calls, with the hardware and implementation language.
 4. Show the full stepsize and inertial parameter rules and any tuning ranges.
 5. For randomized problems, publish seeds, instance generation, and a measure of variability.
