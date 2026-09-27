@@ -7,12 +7,17 @@ This is a static academic website hosted with GitHub Pages. No software framewor
 | Change | File to edit |
 | --- | --- |
 | Add, edit, or remove a publication | `assets/data.js` |
+| Add a research note | `notes/` and `research-notes.html` |
 | Name, About Me, research interests, emails, and profile links | `index.html` |
 | Education page | `education.html` |
 | Teaching and CV page | `teaching.html` |
 | Profile photograph | `assets/images/moin-uddin.png` |
 | CV PDF | `assets/Moin-Uddin-CV.pdf` |
 | Colours, spacing, photograph/card size, and layout | `assets/enhancements.css` |
+
+## Research notes
+
+The Research Notes page links to Markdown notes in `notes/`. The first note, `notes/monotone-inclusion-methods.md`, explains classical splitting baselines and records source links. Add only material you have permission to make public.
 
 ## Add a new publication
 
