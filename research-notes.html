@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research notes by Dr. Moin Uddin on monotone inclusions, operator splitting, and reproducible numerical comparisons.">
+  <title>Research Notes | Dr. Moin Uddin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/enhancements.css">
+  <style>
+    .notes-lede{max-width:760px}.notes-card{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:190px 1fr;gap:35px}
+    .notes-card h2{font-size:clamp(1.7rem,3vw,2.45rem)}.notes-card p{margin:0 0 14px;color:#4f5f6a}.notes-card .eyebrow{margin:4px 0}
+    .notes-card .text-link{display:inline-block;margin-top:6px}
+    .note-steps{margin:8px 0 0;padding-left:20px;color:#4f5f6a}.note-steps li{margin-bottom:8px}
+    .source-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .source-links a{display:inline-block;border:1px solid var(--line);padding:8px 11px;color:var(--blue);text-decoration:none;font-size:.87rem;font-weight:700}
+    @media(max-width:720px){.notes-card{grid-template-columns:1fr;gap:8px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html">Dr. Moin Uddin</a><button class="menu-button" aria-label="Open menu">Menu</button><nav><a href="index.html">Home</a><a href="publications.html">Publications</a><a class="active" href="research-notes.html">Research Notes</a><a href="education.html">Education</a><a href="teaching.html">Teaching &amp; CV</a><a href="index.html#contact">Contact</a></nav></header>
+  <main class="page wrap">
+    <p class="eyebrow">Open research notes</p>
+    <h1>Research Notes</h1>
+    <p class="lede notes-lede">Short, open explanations of optimization algorithms and the choices behind numerical experiments. The first note maps two classical methods for monotone inclusions.</p>
+    <article class="notes-card">
+      <p class="eyebrow">01 · Monotone inclusions</p>
+      <div><h2>One inclusion, two splitting strategies</h2>
+        <p>For 0 ∈ A(x) + B(x), Tseng's forward–backward–forward step corrects at an intermediate point. The Malitsky–Tam forward–reflected–backward step reuses a previous operator value. The note gives their updates, evaluation counts, standard stepsize regimes, and source papers.</p>
+        <a class="text-link" href="https://github.com/moinamu/moinamu.github.io/blob/main/notes/monotone-inclusion-methods.md">Read the full note on GitHub <span>→</span></a>
+        <div class="source-links"><a href="https://doi.org/10.1137/S0363012998338806">Tseng (2000)</a><a href="https://doi.org/10.1137/18M1207260">Malitsky–Tam (2020)</a></div>
+      </div>
+    </article>
+    <article class="notes-card">
+      <p class="eyebrow">02 · Numerical work</p>
+      <div><h2>Make comparisons reproducible</h2>
+        <p>An iteration count alone can hide the cost of a line search. A useful report specifies the residual and tolerance, counts operator and resolvent evaluations, and records wall time, parameters, seeds, and incomplete runs.</p>
+        <a class="text-link" href="https://github.com/moinamu/moinamu.github.io/blob/main/notes/monotone-inclusion-methods.md#reporting-a-fair-numerical-comparison">Use the comparison checklist <span>→</span></a>
+      </div>
+    </article>
+    <article class="notes-card">
+      <p class="eyebrow">Published research</p>
+      <div><h2>Read the papers</h2>
+        <p>My publication list links to journal records. The projection and contraction work on Hilbert-space inclusions also has a public preprint. Research notes here explain background ideas and point readers to the papers for full results.</p>
+        <div class="source-links"><a href="publications.html">All publications</a><a href="https://arxiv.org/abs/2607.25203">Projection–contraction preprint</a></div>
+      </div>
+    </article>
+  </main>
+  <footer class="wrap">© <span id="year"></span> Dr. Moin Uddin · Built with GitHub Pages</footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
